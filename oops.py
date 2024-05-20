@@ -1,15 +1,28 @@
-class Dog:
+class Book:
+    def __init__(self,title,author,isbn) :
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+        self.available = True
 
-    def __init__(self,name,age):
+class Patron:
+
+    def __init__(self,name,patron_id):
         self.name = name
-        self.age = age
-        print(name)
-    def get(self):
-        return self.age
-    def set(self,age):
-        self.age = age
-        return self.age
+        self.patron_id = patron_id
+        self.borrowed_books = []
 
-d = Dog("jam",18)
-print(d.set(20))
+    def borrow_book(self,book):
+        if book.available:
+            self.borrowed_books.append(book)
+            book.available = False
+            print(f"{self.name} borrowed {self.book}")
 
+
+class library:
+
+    def __init__(self) :
+
+        
+        
+        
